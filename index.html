@@ -10,10 +10,6 @@
   <title>Fitness Gym | Train Strong. Feel Stronger.</title>
 
   <style>
-    /* =========================
-       BASIC SETTINGS
-    ========================== */
-
     * {
       margin: 0;
       padding: 0;
@@ -28,377 +24,455 @@
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* =========================
-       HEADER
-    ========================== */
-
-    header {
+    /* NAVBAR */
+    nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.96);
-      border-bottom: 1px solid #292929;
-    }
-
-    nav {
-      max-width: 1200px;
-      height: 70px;
-      margin: auto;
-      padding: 0 20px;
-
+      background: rgba(0, 0, 0, 0.9);
+      padding: 18px 8%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 1px;
+      font-size: 25px;
+      font-weight: bold;
+      color: #ff3c00;
     }
 
-    .logo span {
-      color: #ff3b30;
-    }
-
-    .nav-links {
-      display: flex;
+    nav ul {
       list-style: none;
-      gap: 28px;
+      display: flex;
+      gap: 25px;
     }
 
-    .nav-links a {
+    nav ul li a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
 
-    .nav-links a:hover {
-      color: #ff3b30;
+    nav ul li a:hover {
+      color: #ff3c00;
     }
 
-    .nav-btn {
-      background: #ff3b30;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
+    /* HERO */
     .hero {
       min-height: 100vh;
-
       display: flex;
       align-items: center;
-
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
       background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.65),
-          rgba(0, 0, 0, 0.85)
-        ),
-        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85");
-
-      background-size: cover;
-      background-position: center;
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+        radial-gradient(circle at center, #3b1600, #090909 65%);
     }
 
     .hero-content {
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 120px 20px 70px;
+      max-width: 850px;
     }
 
     .hero h1 {
-      max-width: 850px;
-
-      font-size: clamp(45px, 7vw, 85px);
-      line-height: 1;
-      font-weight: 900;
+      font-size: clamp(45px, 8vw, 85px);
       text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 25px;
     }
 
     .hero h1 span {
-      color: #ff3b30;
+      color: #ff3c00;
     }
 
     .hero p {
-      max-width: 620px;
-      margin: 25px 0;
-
-      font-size: 19px;
+      font-size: 20px;
       color: #ddd;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      margin-bottom: 35px;
     }
 
     .btn {
       display: inline-block;
-
-      padding: 14px 25px;
-
-      border: 2px solid #ff3b30;
-      border-radius: 6px;
-
+      padding: 15px 30px;
+      background: #ff3c00;
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-
-      cursor: pointer;
+      border-radius: 5px;
       transition: 0.3s;
     }
 
-    .btn-primary {
-      background: #ff3b30;
+    .btn:hover {
+      background: #ff5c2a;
+      transform: translateY(-3px);
     }
 
-    .btn-primary:hover {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-
-    .btn-outline:hover {
-      background: #ff3b30;
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================== */
-
+    /* SECTIONS */
     section {
-      padding: 90px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
+      padding: 90px 8%;
     }
 
     .section-title {
       text-align: center;
+      font-size: 40px;
       margin-bottom: 50px;
     }
 
-    .section-title h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    .section-title span {
+      color: #ff3c00;
     }
 
-    .section-title p {
-      max-width: 650px;
-      margin: auto;
-      color: #aaa;
-    }
-
-    /* =========================
-       WHY US
-    ========================== */
-
-    .benefits {
+    /* ABOUT */
+    .about {
       background: #111;
     }
 
-    .grid {
+    .about-container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-container p {
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #0b0b0b;
+    }
+
+    .cards {
+      max-width: 1100px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
     .card {
-      background: #181818;
-      padding: 30px;
-
-      border: 1px solid #292929;
+      background: #161616;
+      padding: 35px 25px;
+      text-align: center;
       border-radius: 10px;
-
+      border: 1px solid #292929;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-7px);
-      border-color: #ff3b30;
+      transform: translateY(-8px);
+      border-color: #ff3c00;
     }
 
-    .icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #aaa;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about {
-      background: #0b0b0b;
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      min-height: 400px;
-
-      object-fit: cover;
-
-      border-radius: 12px;
-    }
-
-    .about-text h2 {
-      font-size: 42px;
+    .card .icon {
+      font-size: 45px;
       margin-bottom: 20px;
     }
 
-    .about-text p {
-      color: #bbb;
-      margin-bottom: 18px;
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #ff3c00;
     }
 
-    /* =========================
-       FACILITIES
-    ========================== */
+    .card p {
+      color: #bbb;
+    }
 
-    .facilities {
+    /* PRICING */
+    .pricing {
       background: #111;
     }
 
-    .facility-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .price-card {
+      max-width: 450px;
+      margin: auto;
+      text-align: center;
+      background: #171717;
+      padding: 45px 30px;
+      border-radius: 12px;
+      border: 2px solid #ff3c00;
     }
 
-    .facility {
-      min-height: 220px;
-
-      padding: 30px;
-
-      background: #1a1a1a;
-
-      border: 1px solid #292929;
-      border-radius: 10px;
-    }
-
-    .facility h3 {
-      color: #ff3b30;
-      font-size: 23px;
+    .price-card h3 {
+      font-size: 30px;
       margin-bottom: 15px;
     }
 
-    .facility ul {
-      list-style: none;
-      color: #ccc;
-    }
-
-    .facility li {
-      padding: 5px 0;
-    }
-
-    .facility li::before {
-      content: "✓ ";
-      color: #ff3b30;
-      font-weight: bold;
-    }
-
-    /* =========================
-       SPECIAL OFFER
-    ========================== */
-
-    .offer {
-      text-align: center;
-
-      background:
-        linear-gradient(
-          rgba(255, 59, 48, 0.9),
-          rgba(180, 20, 15, 0.9)
-        ),
-        url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=85");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .offer h2 {
+    .price {
       font-size: 50px;
-      text-transform: uppercase;
+      font-weight: bold;
+      color: #ff3c00;
+      margin-bottom: 20px;
     }
 
-    .offer p {
-      max-width: 650px;
-      margin: 15px auto 25px;
-      font-size: 18px;
+    .price-card p {
+      color: #ccc;
+      margin-bottom: 25px;
     }
 
-    .offer .btn {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
+    /* CONTACT */
     .contact {
       background: #0b0b0b;
+      text-align: center;
     }
 
     .contact-box {
-      max-width: 850px;
+      max-width: 650px;
       margin: auto;
-
-      padding: 40px;
-
-      background: #181818;
-
-      border: 1px solid #292929;
-      border-radius: 12px;
     }
 
-    .contact-box form {
-      display: grid;
-      gap: 15px;
+    .contact-box p {
+      margin: 15px 0;
+      color: #ccc;
+      font-size: 18px;
     }
 
-    input,
-    textarea {
-      width: 100%;
+    .contact-box strong {
+      color: white;
+    }
 
-      padding: 15px;
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #050505;
+      color: #888;
+      border-top: 1px solid #222;
+    }
 
-      background: #0e0e0e;
+    footer span {
+      color: #ff3c00;
+    }
 
-      border: 1px solid
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      nav ul li a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      nav ul {
+        gap: 8px;
+      }
+
+      nav ul li a {
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">FITNESS GYM</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Plans</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>
+        TRAIN <span>STRONG.</span><br>
+        FEEL STRONGER.
+      </h1>
+
+      <p>
+        Build strength, confidence and a healthier lifestyle.
+        Your transformation starts today.
+      </p>
+
+      <a href="#contact" class="btn">JOIN NOW</a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <h2 class="section-title">
+      ABOUT <span>US</span>
+    </h2>
+
+    <div class="about-container">
+      <p>
+        Welcome to Fitness Gym — a place where dedication meets results.
+        Whether you're a beginner or an experienced athlete, our goal is
+        to help you become stronger, healthier and more confident.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <h2 class="section-title">
+      OUR <span>SERVICES</span>
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">💪</div>
+        <h3>Strength Training</h3>
+        <p>
+          Build muscle, improve strength and become more powerful
+          with structured workouts.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Fat Loss</h3>
+        <p>
+          Burn calories and improve your fitness with effective
+          training programs.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3>Personal Training</h3>
+        <p>
+          Get personalized guidance and training designed around
+          your individual goals.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+
+    <h2 class="section-title">
+      MEMBERSHIP <span>PLAN</span>
+    </h2>
+
+    <div class="price-card">
+
+      <h3>Monthly Membership</h3>
+
+      <div class="price">₹999</div>
+
+      <p>
+        Unlimited gym access<br>
+        Professional equipment<br>
+        Basic fitness guidance<br>
+        Flexible workout timings
+      </p>
+
+      <a href="#contact" class="btn">GET STARTED</a>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">
+      CONTACT <span>US</span>
+    </h2>
+
+    <div class="contact-box">
+
+      <p>
+        Ready to start your fitness journey?
+      </p>
+
+      <p>
+        <strong>📞 Phone:</strong>
+        +91 98765 43210
+      </p>
+
+      <p>
+        <strong>📧 Email:</strong>
+        fitnessgym@example.com
+      </p>
+
+      <p>
+        <strong>📍 Location:</strong>
+        Your City, India
+      </p>
+
+      <br>
+
+      <a class="btn"
+         href="tel:+919876543210">
+        CALL NOW
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <span>Fitness Gym</span>. All Rights Reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
