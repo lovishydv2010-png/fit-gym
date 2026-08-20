@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Best Foods - Delicious food in Delhi, available 24/7.">
+  <meta name="description" content="Fitness Gym - Build strength, confidence and a healthier lifestyle.">
 
-  <title>Best Foods | Delicious Food in Delhi</title>
+  <title>Fitness Gym | Train Strong. Feel Stronger.</title>
 
   <style>
     * {
@@ -18,366 +17,195 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
       color: white;
       line-height: 1.6;
     }
 
-    /* NAVBAR */
-    nav {
+    header {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000;
-      padding: 18px 7%;
+      background: rgba(0,0,0,0.9);
+      padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(15, 15, 15, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 1000;
+      border-bottom: 1px solid #222;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 25px;
       font-weight: bold;
-      color: #ff6b35;
+      color: #ff3c00;
     }
 
-    .logo span {
-      color: white;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    nav ul li a {
+    nav a {
       color: white;
       text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
+      margin-left: 25px;
+      font-weight: bold;
     }
 
-    nav ul li a:hover {
-      color: #ff6b35;
+    nav a:hover {
+      color: #ff3c00;
     }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 120px 7% 70px;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
       background:
-        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.85)),
-        radial-gradient(circle at 70% 40%, #8f2d00, #0f0f0f 55%);
-    }
-
-    .hero-content {
-      max-width: 750px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(255,107,53,0.15);
-      border: 1px solid rgba(255,107,53,0.5);
-      color: #ff8a5b;
-      padding: 8px 16px;
-      border-radius: 30px;
-      margin-bottom: 20px;
-      font-size: 14px;
+        linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.8)),
+        radial-gradient(circle at center, #3b1600, #080808 65%);
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8vw, 90px);
-      line-height: 1;
-      margin-bottom: 25px;
+      font-size: clamp(45px, 8vw, 85px);
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
     .hero h1 span {
-      color: #ff6b35;
+      color: #ff3c00;
     }
 
     .hero p {
-      max-width: 600px;
-      color: #d0d0d0;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      font-size: 20px;
+      color: #ccc;
+      max-width: 650px;
+      margin: auto;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 25px;
-      border-radius: 30px;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: #ff3c00;
+      color: white;
       text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: .3s;
     }
 
-    .primary {
-      background: #ff6b35;
-      color: white;
+    .btn:hover {
+      background: white;
+      color: #ff3c00;
+      transform: scale(1.05);
     }
 
-    .primary:hover {
-      background: #ff8a5b;
-      transform: translateY(-3px);
-    }
-
-    .secondary {
-      border: 1px solid #555;
-      color: white;
-    }
-
-    .secondary:hover {
-      border-color: #ff6b35;
-      color: #ff6b35;
-    }
-
-    /* SECTIONS */
     section {
-      padding: 90px 7%;
-    }
-
-    .section-title {
+      padding: 90px 8%;
       text-align: center;
-      margin-bottom: 50px;
     }
 
-    .section-title h2 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    section h2 {
+      font-size: 40px;
+      margin-bottom: 45px;
     }
 
-    .section-title p {
-      color: #aaa;
+    section h2 span {
+      color: #ff3c00;
     }
 
-    /* MENU */
-    .menu-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
     }
 
-    .food-card {
-      background: #181818;
-      border: 1px solid #292929;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .food-card:hover {
-      transform: translateY(-8px);
-      border-color: #ff6b35;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-    }
-
-    .food-image {
-      height: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 75px;
-      background: linear-gradient(135deg, #292929, #141414);
-    }
-
-    .food-info {
-      padding: 22px;
-    }
-
-    .food-info h3 {
-      font-size: 22px;
-      margin-bottom: 7px;
-    }
-
-    .food-info p {
-      color: #999;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: #ff6b35;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    /* ABOUT */
-    .about {
+    .card {
       background: #151515;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-box {
-      background: linear-gradient(135deg, #ff6b35, #9d2d00);
-      border-radius: 25px;
-      padding: 55px;
-      text-align: center;
-      font-size: 90px;
-      box-shadow: 0 20px 50px rgba(255,107,53,0.15);
-    }
-
-    .about-text h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      color: #bbb;
-      margin-bottom: 20px;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .feature {
-      padding: 30px;
-      background: #181818;
-      border-radius: 18px;
-      text-align: center;
+      padding: 35px 25px;
+      border-radius: 15px;
       border: 1px solid #292929;
+      transition: .3s;
     }
 
-    .feature-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #ff3c00;
     }
 
-    .feature h3 {
-      margin-bottom: 8px;
+    .card h3 {
+      color: #ff3c00;
+      margin-bottom: 15px;
+      font-size: 23px;
     }
 
-    .feature p {
-      color: #999;
-      font-size: 14px;
+    .card p {
+      color: #bbb;
     }
 
-    /* CONTACT */
+    .about {
+      background: #101010;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      color: #ccc;
+      font-size: 18px;
+    }
+
     .contact {
-      background:
-        linear-gradient(rgba(15,15,15,0.95), rgba(15,15,15,0.95)),
-        radial-gradient(circle, #792800, #0f0f0f);
+      background: linear-gradient(135deg, #160600, #0b0b0b);
     }
 
     .contact-box {
-      max-width: 850px;
+      max-width: 650px;
       margin: auto;
-      background: #181818;
+      background: #151515;
+      padding: 40px;
+      border-radius: 20px;
       border: 1px solid #292929;
-      padding: 45px;
-      border-radius: 25px;
-      text-align: center;
-    }
-
-    .contact-box h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
     }
 
     .contact-box p {
-      color: #aaa;
-      margin-bottom: 10px;
+      margin: 15px 0;
+      color: #ddd;
+      font-size: 18px;
     }
 
-    .contact-info {
-      margin: 25px 0;
-      display: grid;
-      gap: 15px;
+    .email {
+      color: #ff3c00;
+      font-weight: bold;
+      word-break: break-word;
     }
 
-    .contact-item {
-      padding: 15px;
-      background: #222;
-      border-radius: 12px;
-    }
-
-    .contact-item strong {
-      color: #ff6b35;
-    }
-
-    .contact-item a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contact-item a:hover {
-      color: #ff6b35;
-    }
-
-    /* FOOTER */
     footer {
-      background: #080808;
-      padding: 30px 7%;
       text-align: center;
-      color: #777;
-      border-top: 1px solid #222;
+      padding: 25px;
+      background: #050505;
+      color: #888;
     }
 
-    footer strong {
-      color: #ff6b35;
-    }
-
-    /* MOBILE */
-    @media (max-width: 750px) {
-
-      nav {
+    @media (max-width: 700px) {
+      header {
         padding: 15px 5%;
       }
 
-      .logo {
-        font-size: 22px;
-      }
-
-      nav ul {
-        gap: 12px;
-      }
-
-      nav ul li a {
-        font-size: 12px;
-      }
-
-      .hero {
-        padding-left: 5%;
-        padding-right: 5%;
+      nav a {
+        margin-left: 10px;
+        font-size: 13px;
       }
 
       section {
         padding: 70px 5%;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-box {
-        padding: 35px;
-        font-size: 70px;
+      section h2 {
+        font-size: 32px;
       }
 
       .contact-box {
-        padding: 30px 20px;
+        padding: 25px 15px;
       }
     }
   </style>
@@ -385,263 +213,103 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">
-      Best<span>Foods</span>
-    </div>
+  <header>
+    <div class="logo">FITNESS GYM</div>
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-
-  <!-- HERO -->
   <section class="hero" id="home">
-
-    <div class="hero-content">
-
-      <div class="tag">
-        🍽️ Open 24/7 • Delhi
-      </div>
-
-      <h1>
-        Taste the <span>Best.</span>
-        Love Every Bite.
-      </h1>
+    <div>
+      <h1>Train <span>Hard.</span><br>Live Strong.</h1>
 
       <p>
-        Welcome to Best Foods — delicious, fresh and satisfying food
-        served with passion in the heart of Delhi. Your cravings,
-        our responsibility.
+        Build strength, confidence and a healthier lifestyle.
+        Your journey starts here.
       </p>
 
-      <div class="buttons">
-        <a href="#menu" class="btn primary">
-          Explore Menu
-        </a>
-
-        <a href="#contact" class="btn secondary">
-          Contact Us
-        </a>
-      </div>
-
+      <a href="#contact" class="btn">JOIN THE GYM</a>
     </div>
-
   </section>
 
+  <section id="services">
+    <h2>Our <span>Services</span></h2>
 
-  <!-- MENU -->
-  <section id="menu">
+    <div class="cards">
 
-    <div class="section-title">
-      <h2>Our Popular Menu</h2>
-      <p>Something delicious for every craving.</p>
-    </div>
-
-    <div class="menu-grid">
-
-      <div class="food-card">
-        <div class="food-image">🍕</div>
-        <div class="food-info">
-          <h3>Cheesy Pizza</h3>
-          <p>Hot, cheesy and loaded with delicious toppings.</p>
-          <div class="price">₹249</div>
-        </div>
+      <div class="card">
+        <h3>💪 Strength Training</h3>
+        <p>
+          Build power and muscle with professional strength-training equipment.
+        </p>
       </div>
 
-      <div class="food-card">
-        <div class="food-image">🍔</div>
-        <div class="food-info">
-          <h3>Classic Burger</h3>
-          <p>Juicy patty with fresh vegetables and special sauce.</p>
-          <div class="price">₹179</div>
-        </div>
+      <div class="card">
+        <h3>🔥 Fat Loss</h3>
+        <p>
+          Improve your fitness and reach your body goals with effective workouts.
+        </p>
       </div>
 
-      <div class="food-card">
-        <div class="food-image">🍜</div>
-        <div class="food-info">
-          <h3>Special Noodles</h3>
-          <p>Flavorful noodles cooked with fresh ingredients.</p>
-          <div class="price">₹159</div>
-        </div>
+      <div class="card">
+        <h3>🏋️ Personal Training</h3>
+        <p>
+          Get focused guidance and workout plans designed around your goals.
+        </p>
       </div>
 
-      <div class="food-card">
-        <div class="food-image">🍛</div>
-        <div class="food-info">
-          <h3>Indian Thali</h3>
-          <p>A delicious combination of authentic Indian flavors.</p>
-          <div class="price">₹229</div>
-        </div>
-      </div>
-
-      <div class="food-card">
-        <div class="food-image">🌯</div>
-        <div class="food-info">
-          <h3>Loaded Wrap</h3>
-          <p>Fresh, tasty and packed with amazing flavors.</p>
-          <div class="price">₹149</div>
-        </div>
-      </div>
-
-      <div class="food-card">
-        <div class="food-image">🍨</div>
-        <div class="food-info">
-          <h3>Sweet Dessert</h3>
-          <p>Finish your meal with something sweet and special.</p>
-          <div class="price">₹99</div>
-        </div>
+      <div class="card">
+        <h3>⚡ Cardio</h3>
+        <p>
+          Improve stamina and endurance with dedicated cardio training.
+        </p>
       </div>
 
     </div>
-
   </section>
 
-
-  <!-- ABOUT -->
   <section class="about" id="about">
+    <h2>About <span>Us</span></h2>
 
-    <div class="about-grid">
-
-      <div class="about-box">
-        🍽️
-      </div>
-
-      <div class="about-text">
-
-        <h2>Food Made With Love</h2>
-
-        <p>
-          At Best Foods, we believe great food brings people together.
-          That's why every dish is prepared with quality ingredients,
-          attention to detail and plenty of passion.
-        </p>
-
-        <p>
-          Whether you're looking for a quick bite, a family meal,
-          or something delicious late at night, we're here for you.
-        </p>
-
-        <a href="#contact" class="btn primary">
-          Get In Touch
-        </a>
-
-      </div>
-
-    </div>
-
+    <p>
+      Welcome to Fitness Gym — a place where dedication meets results.
+      Whether you want to build muscle, lose fat, increase strength,
+      or simply become healthier, we're here to help you become your
+      strongest version.
+    </p>
   </section>
 
-
-  <!-- FEATURES -->
-  <section>
-
-    <div class="section-title">
-      <h2>Why Choose Us?</h2>
-      <p>Good food. Great service. Anytime.</p>
-    </div>
-
-    <div class="features">
-
-      <div class="feature">
-        <div class="feature-icon">🕐</div>
-        <h3>Open 24/7</h3>
-        <p>
-          We're available around the clock for your cravings.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">🥗</div>
-        <h3>Fresh Ingredients</h3>
-        <p>
-          Quality ingredients for delicious meals.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">❤️</div>
-        <h3>Made With Love</h3>
-        <p>
-          Every dish is prepared with care and passion.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">📍</div>
-        <h3>Delhi</h3>
-        <p>
-          Proudly serving delicious food in Delhi.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
   <section class="contact" id="contact">
+    <h2>Get In <span>Touch</span></h2>
 
     <div class="contact-box">
 
-      <h2>Let's Talk Food 🍴</h2>
+      <p>📍 Location: Delhi, India</p>
+
+      <p>🕒 Opening Hours: 24 × 7</p>
 
       <p>
-        Have a question, suggestion or want to know more?
-        Get in touch with us.
+        📧 Email:
+        <a class="email" href="mailto:lovishydv2010@gmail.com">
+          lovishydv2010@gmail.com
+        </a>
       </p>
 
-      <div class="contact-info">
-
-        <div class="contact-item">
-          📍 <strong>Location:</strong> Delhi, India
-        </div>
-
-        <div class="contact-item">
-          🕐 <strong>Opening Hours:</strong> 24/7
-        </div>
-
-        <div class="contact-item">
-          📧 <strong>Email:</strong>
-          <a href="mailto:lovishydv2010@gmail.com">
-            lovishydv2010@gmail.com
-          </a>
-        </div>
-
-      </div>
-
-      <a
-        href="mailto:lovishydv2010@gmail.com"
-        class="btn primary"
-      >
-        Email Us
+      <a class="btn" href="mailto:lovishydv2010@gmail.com">
+        EMAIL US
       </a>
 
     </div>
-
   </section>
 
-
-  <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026 <strong>Best Foods</strong>. All Rights Reserved.
-    </p>
-
-    <p>
-      Delicious food • Delhi • Open 24/7
-    </p>
-
+    <p>© 2026 Fitness Gym. All Rights Reserved.</p>
   </footer>
-
 
 </body>
 </html>
