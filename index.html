@@ -11,301 +11,140 @@
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
+      background: #111;
       color: white;
       line-height: 1.6;
     }
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid #222;
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ff3c00;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
+    header h1 {
       color: #ff3c00;
+      font-size: 32px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
+    nav {
+      margin-top: 10px;
     }
 
-    nav ul li a {
+    nav a {
       color: white;
       text-decoration: none;
+      margin: 0 12px;
       font-weight: bold;
-      transition: 0.3s;
     }
 
-    nav ul li a:hover {
+    nav a:hover {
       color: #ff3c00;
     }
 
-    /* HERO */
     .hero {
-      min-height: 100vh;
+      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 20px 60px;
-      background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-        radial-gradient(circle at center, #3b1600, #090909 65%);
+      padding: 30px 20px;
+      background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+                  radial-gradient(circle, #333, #000);
     }
 
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 8vw, 85px);
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
+    .hero h2 {
+      font-size: 48px;
       color: #ff3c00;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 20px;
-      color: #ddd;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 14px 25px;
       background: #ff3c00;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
-      transition: 0.3s;
+      border-radius: 6px;
     }
 
     .btn:hover {
-      background: #ff5c2a;
-      transform: translateY(-3px);
+      background: #ff5a25;
     }
 
-    /* SECTIONS */
     section {
-      padding: 90px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 40px;
-      margin-bottom: 50px;
-    }
-
-    .section-title span {
-      color: #ff3c00;
-    }
-
-    /* ABOUT */
-    .about {
-      background: #111;
-    }
-
-    .about-container {
-      max-width: 1000px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
+    }
+
+    section h2 {
       text-align: center;
-    }
-
-    .about-container p {
-      color: #ccc;
-      font-size: 18px;
-    }
-
-    /* SERVICES */
-    .services {
-      background: #0b0b0b;
+      color: #ff3c00;
+      font-size: 34px;
+      margin-bottom: 30px;
     }
 
     .cards {
-      max-width: 1100px;
-      margin: auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #161616;
-      padding: 35px 25px;
-      text-align: center;
+      background: #1c1c1c;
+      padding: 25px;
       border-radius: 10px;
-      border: 1px solid #292929;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #ff3c00;
-    }
-
-    .card .icon {
-      font-size: 45px;
-      margin-bottom: 20px;
+      text-align: center;
+      border: 1px solid #333;
     }
 
     .card h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
       color: #ff3c00;
+      margin-bottom: 10px;
     }
 
-    .card p {
-      color: #bbb;
-    }
-
-    /* PRICING */
-    .pricing {
-      background: #111;
-    }
-
-    .price-card {
-      max-width: 450px;
-      margin: auto;
-      text-align: center;
-      background: #171717;
-      padding: 45px 30px;
-      border-radius: 12px;
-      border: 2px solid #ff3c00;
-    }
-
-    .price-card h3 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      font-size: 50px;
-      font-weight: bold;
-      color: #ff3c00;
-      margin-bottom: 20px;
-    }
-
-    .price-card p {
-      color: #ccc;
-      margin-bottom: 25px;
-    }
-
-    /* CONTACT */
     .contact {
-      background: #0b0b0b;
       text-align: center;
+      background: #181818;
+      border-radius: 10px;
     }
 
-    .contact-box {
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .contact-box p {
-      margin: 15px 0;
-      color: #ccc;
-      font-size: 18px;
-    }
-
-    .contact-box strong {
-      color: white;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #050505;
-      color: #888;
-      border-top: 1px solid #222;
-    }
-
-    footer span {
+    .contact a {
       color: #ff3c00;
+      font-weight: bold;
+      text-decoration: none;
     }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      nav ul {
-        gap: 12px;
-      }
-
-      nav ul li a {
-        font-size: 13px;
-      }
-
-      .hero {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 70px 5%;
-      }
-
-      .section-title {
-        font-size: 32px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
     }
 
-    @media (max-width: 480px) {
-      .logo {
-        font-size: 20px;
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 36px;
       }
 
-      nav ul {
-        gap: 8px;
-      }
-
-      nav ul li a {
-        font-size: 11px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 16px;
+      nav a {
+        display: inline-block;
+        margin: 5px;
       }
     }
   </style>
@@ -313,165 +152,83 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">FITNESS GYM</div>
+  <header>
+    <h1>FITNESS GYM</h1>
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Plans</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-content">
-
-      <h1>
-        TRAIN <span>STRONG.</span><br>
-        FEEL STRONGER.
-      </h1>
-
-      <p>
-        Build strength, confidence and a healthier lifestyle.
-        Your transformation starts today.
-      </p>
-
+    <div>
+      <h2>TRAIN STRONG.<br>FEEL STRONGER.</h2>
+      <p>Build strength, confidence and a healthier lifestyle.</p>
       <a href="#contact" class="btn">JOIN NOW</a>
-
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-
-    <h2 class="section-title">
-      ABOUT <span>US</span>
-    </h2>
-
-    <div class="about-container">
-      <p>
-        Welcome to Fitness Gym — a place where dedication meets results.
-        Whether you're a beginner or an experienced athlete, our goal is
-        to help you become stronger, healthier and more confident.
-      </p>
-    </div>
-
+  <section id="about">
+    <h2>ABOUT US</h2>
+    <p style="text-align:center;">
+      Welcome to Fitness Gym — a place where dedication meets results.
+      Whether you're a beginner or an experienced athlete, we're here
+      to help you become stronger, healthier and more confident.
+    </p>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-
-    <h2 class="section-title">
-      OUR <span>SERVICES</span>
-    </h2>
+  <section id="services">
+    <h2>OUR SERVICES</h2>
 
     <div class="cards">
 
       <div class="card">
-        <div class="icon">💪</div>
         <h3>Strength Training</h3>
-        <p>
-          Build muscle, improve strength and become more powerful
-          with structured workouts.
-        </p>
+        <p>Build muscle, strength and power with effective workouts.</p>
       </div>
 
       <div class="card">
-        <div class="icon">🔥</div>
-        <h3>Fat Loss</h3>
-        <p>
-          Burn calories and improve your fitness with effective
-          training programs.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🏆</div>
         <h3>Personal Training</h3>
-        <p>
-          Get personalized guidance and training designed around
-          your individual goals.
-        </p>
+        <p>Get personalized guidance to reach your fitness goals.</p>
+      </div>
+
+      <div class="card">
+        <h3>Weight Loss</h3>
+        <p>Follow structured workouts designed to help you stay fit.</p>
+      </div>
+
+      <div class="card">
+        <h3>Fitness Programs</h3>
+        <p>Workout programs suitable for different fitness levels.</p>
       </div>
 
     </div>
-
   </section>
 
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
+  <section id="contact" class="contact">
+    <h2>CONTACT US</h2>
 
-    <h2 class="section-title">
-      MEMBERSHIP <span>PLAN</span>
-    </h2>
+    <p>Ready to start your fitness journey?</p>
 
-    <div class="price-card">
-
-      <h3>Monthly Membership</h3>
-
-      <div class="price">₹999</div>
-
-      <p>
-        Unlimited gym access<br>
-        Professional equipment<br>
-        Basic fitness guidance<br>
-        Flexible workout timings
-      </p>
-
-      <a href="#contact" class="btn">GET STARTED</a>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2 class="section-title">
-      CONTACT <span>US</span>
-    </h2>
-
-    <div class="contact-box">
-
-      <p>
-        Ready to start your fitness journey?
-      </p>
-
-      <p>
-        <strong>📞 Phone:</strong>
-        +91 98765 43210
-      </p>
-
-      <p>
-        <strong>📧 Email:</strong>
-        fitnessgym@example.com
-      </p>
-
-      <p>
-        <strong>📍 Location:</strong>
-        Your City, India
-      </p>
-
-      <br>
-
-      <a class="btn"
-         href="tel:+919876543210">
-        CALL NOW
+    <p style="margin-top:15px;">
+      Email:
+      <a href="mailto:lovishydv2010@gmail.com">
+        lovishydv2010@gmail.com
       </a>
+    </p>
 
-    </div>
-
+    <p style="margin-top:20px;">
+      <a href="mailto:lovishydv2010@gmail.com" class="btn">
+        EMAIL US
+      </a>
+    </p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>
-      © 2026 <span>Fitness Gym</span>. All Rights Reserved.
-    </p>
+    <p>© 2026 Fitness Gym. All Rights Reserved.</p>
   </footer>
 
 </body>
